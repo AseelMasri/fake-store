@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 6px solid #fff;
+    border-top-color: #FF3D00;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+.products {
+    padding: 40px 10%;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+.products .row {
+ 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        justify-items: center; 
+}
+
+.products .product {
+   /* background: #fff;
+    width: 30%;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    */
+    background: #fff;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; 
+    max-width: 350px; 
+}
+
+.products .product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.products .product img {
+    width: 100%;
+    max-height: 250px;
+    border-radius: 10px;
+}
+
+.products .product h2 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+.product-price {
+    font-size: 1.4rem;
+    color: #FF3D00;
+    font-weight: bold;
+    margin-top: 15px;
+    text-align: center; 
+    background-color: #f8f9fa;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s ease; 
+}
+
+.product-price:hover {
+    background-color: #FF3D00;
+    color: #fff; 
+}
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.pagination li {
+    list-style: none;
+    margin: 0 5px;
+}
+
+.pagination button {
+    padding: 8px 15px;
+    background-color: #FF9900;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+    background-color: #e64a19;
+}
+
+.pagination button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+
+.back-to-home {
+    text-align: center; 
+    margin-top: 30px; 
+}
+
+.back-btn {
+    padding: 12px 25px;
+    background-color: #FF9900;
+    color: #fff; 
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-btn i {
+    margin-right: 8px; 
+}
+.back-btn:hover {
+    background-color: #e64a19;
+    transform: scale(1.05); 
+}
+
+.back-btn:focus {
+    outline: none; 
+}
+
+.back-btn:active {
+    transform: scale(0.98); 
+}
+
+.my-modal{
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+.my-modal .img{
+    background-color: #FFF;
+    padding: 50px 100px;
+    border-radius:20px;
+    box-shadow: 0 10px 10px 20px rgba(255, 145, 1, 0.329);
+    position: relative;
+}
+
+
+.my-modal img{
+    width: 300px;
+
+}
+.left-btn,.close-btn,.right-btn{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    color: #FFF;
+    border-radius: 20px;
+}
+.left-btn{
+    left: 10px;
+    top: 50%;
+}
+
+.close-btn{
+    right: 10px;
+    top: 10px;
+}
+
+.right-btn{
+    right: 10px;
+    top: 50%;
+}
+.d-none{
+    display: none;
+
+}
+.product img,.close-btn,.right-btn,.left-btn{
+    cursor: pointer;
+
+}
+.my-modal .left-btn,
+.my-modal .right-btn,
+.my-modal .close-btn {
+    position: absolute;
+    font-size: 24px;
+    color: #FF3D00;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.my-modal .left-btn {
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.my-modal .right-btn {
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.my-modal .close-btn {
+    top: 10px;
+    right: 10px;
+}
+
+.my-modal .left-btn:hover,
+.my-modal .right-btn:hover,
+.my-modal .close-btn:hover {
+    opacity: 0.7;
+}
+
+.pagination button.active {
+    background-color: #333;  
+    color: white;
+    font-weight: bold;
+    border: 2px solid #FF3D00;
+}
+
+
+
+.d-none {
+    display: none;
+}
